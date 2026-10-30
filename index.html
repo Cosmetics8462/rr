@@ -15,17 +15,17 @@
       var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-      // تم وضع معرف البيكسل الجديد هنا
+      // تم وضع معرف البيكسل الجديد وربطه بالحدث تلقائياً
       ttq.load('DBHV6SRC77UEENV8CRN0');
       ttq.page();
       
-      // حدث مشاهدة الصفحة تلقائياً مع البيكسل الجديد
+      // ربط حدث مشاهدة الصفحة تلقائياً مع البيكسل الجديد
       ttq.ready(function() {
           ttq.track('ViewContent');
       });
     }(window, document, 'ttq');
 
-    // دالة الانتقال الفوري للواتساب مع تتبع الأحداث (Contact, Lead, InitiateCheckout)
+    // دالة الانتقال الفوري للواتساب مع تتبع الأحداث (Contact, Lead, InitiateCheckout) للبيكسل الجديد
     function openWhatsAppWithTracking(event, url) {
         event.preventDefault();
         try {
@@ -148,7 +148,7 @@
             font-weight: 400;
         }
 
-        /* تنسيق الشريط السفلي وزر الواتساب الأخضر بحجم أصغر وأنيق */
+        /* تنسيق الشريط السفلي وزر الواتساب الأخضر بحجم أكبر وأكثر راحة للضغط */
         .footer-container {
             position: fixed;
             bottom: 0;
@@ -157,7 +157,7 @@
             background: rgba(11, 11, 11, 0.96);
             backdrop-filter: blur(12px);
             border-top: 1px solid rgba(37, 211, 102, 0.2);
-            padding: 10px 16px;
+            padding: 14px 16px;
             z-index: 1000;
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);
         }
@@ -166,17 +166,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
             max-width: 450px;
             margin: 0 auto;
             background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%);
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 12px;
+            padding: 15px 20px; /* تم زيادة الارتفاع والحشو الداخلي ليصبح الزر أطول وأوضح */
+            border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 800;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.3);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -195,8 +195,8 @@
         }
 
         .whatsapp-green-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 25px;
+            height: 25px;
             fill: #ffffff;
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
         }
@@ -219,7 +219,7 @@
         <h1>Beauty Store</h1>
         <div class="subtitle">OFFICIAL STORE</div>
 
-        <!-- زر الواتساب الدائري الرئيسي مع الانتقال الفوري والتتبع -->
+        <!-- زر الواتساب الدائري الرئيسي مع الانتقال الفوري والتتبع للبيكسل الجديد -->
         <a href="https://wa.me/972537113152?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%81%D8%A7%D8%AA%20%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D9%83%20%D8%B9%D9%84%D9%89%20TikTok%20%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%3F" 
            class="whatsapp-circle-btn" 
            onclick="openWhatsAppWithTracking(event, this.href)" 
@@ -237,7 +237,7 @@
         </div>
     </div>
 
-    <!-- شريط أسفل الصفحة يحمل زر الواتساب الأخضر النحيف والأنيق -->
+    <!-- شريط أسفل الصفحة يحمل زر الواتساب الأخضر الأنيق (مع تتبع البيكسل الجديد) -->
     <div class="footer-container">
         <a href="https://wa.me/972537113152?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%81%D8%A7%D8%AA%20%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D9%83%20%D8%B9%D9%84%D9%89%20TikTok%20%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%3F" 
            class="whatsapp-green-btn" 
